@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finsmine</title>
+    <title>Finsmine - Services</title>
     <style>
+        /* Efek Muncul Halus */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -14,7 +20,6 @@
             min-height: 100vh;
             padding: 20px;
             box-sizing: border-box;
-            
             background-color: #0d1117;
             background-image: url('backgroundgh.jpg'); 
             background-size: cover;
@@ -22,93 +27,157 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
+
         .container {
             max-width: 600px;
-            width: 100%; 
+            width: 100%;
             text-align: center;
             background-color: rgba(13, 17, 23, 0.85); 
             padding: 40px;
             border-radius: 20px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-            box-sizing: border-box;
+            animation: fadeIn 1s ease-out;
         }
+
         .foto-chibi {
-            width: 150px;
-            height: 150px;
+            width: 130px;
+            height: 130px;
             object-fit: cover;
             border-radius: 50%;
             border: 4px solid #58a6ff;
             margin-bottom: 15px;
         }
-        h1 {
-            color: #58a6ff; 
-            font-size: 3em;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            color: #c9d1d9;
-            margin-bottom: 30px;
-        }
+
+        h1 { color: #58a6ff; font-size: 2.5em; margin: 0 0 10px 0; }
+        
+        /* Gaya Tombol Sosmed */
         .social-links {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
+            gap: 10px;
+            margin-bottom: 30px;
         }
+
         .social-links a {
-            display: inline-block;
-            padding: 12px 24px;
+            padding: 10px 18px;
             background-color: #58a6ff; 
             color: #0d1117; 
             text-decoration: none;
             border-radius: 6px;
             font-weight: bold;
-            transition: background-color 0.2s;
-        }
-        .social-links a:hover {
-            background-color: #82bfff; 
+            font-size: 0.9em;
+            transition: 0.3s;
         }
 
-        
+        .social-links a:hover { background-color: #82bfff; transform: translateY(-2px); }
+
+        /* Gaya List Joki (Accordion) */
+        .joki-section {
+            border-top: 1px solid #30363d;
+            padding-top: 20px;
+            text-align: left;
+        }
+
+        .joki-item {
+            background: rgba(88, 166, 255, 0.05);
+            border: 1px solid rgba(88, 166, 255, 0.3);
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .joki-header {
+            padding: 15px;
+            cursor: pointer;
+            color: #58a6ff;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .joki-content {
+            display: none; /* Sembunyi awalnya */
+            padding: 0 15px 15px 15px;
+            color: #c9d1d9;
+            border-top: 1px solid rgba(88, 166, 255, 0.1);
+        }
+
+        .price-list {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+        }
+
+        .price-list li {
+            padding: 5px 0;
+            border-bottom: 1px hideen;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Responsif HP */
         @media (max-width: 600px) {
-            .container {
-                padding: 30px 20px; 
-            }
-            .foto-chibi {
-                width: 120px; 
-                height: 120px;
-            }
-            h1 {
-                font-size: 2.2em; 
-            }
-            p {
-                font-size: 1em; 
-                margin-bottom: 20px;
-            }
-            .social-links a {
-                padding: 10px 18px; 
-                font-size: 0.9em;
-            }
+            .container { padding: 25px 15px; }
+            h1 { font-size: 2em; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="ava.png" alt="Finsmine Avatar" class="foto-chibi">
-        
-        <h1>Finsmine</h1>
-        <p>Welcome to Finsmine. I'm a streamer and creator dedicated to sharing what I love. My goal is simple, to share content that brings a little more joy and entertainment to your day.</p>
-        <div class="social-links">
-            <a href="https://www.youtube.com/@Finsmys" target="_blank">YouTube</a>
-            <a href="https://www.tiktok.com/@notyoursmineagain" target="_blank">TikTok</a>
-            <a href="https://saweria.co/finsmine" target="_blank">Saweria</a>
-            <a href="https://sociabuzz.com/finsmine/tribe" target="_blank">Sociabuzz</a>
-            <a href="https://discord.com/invite/mHC6Wx73sb" target="_blank">Discord</a>
-            <a href="mailto:inquiry@finsmine.com">Email Me</a>
+
+<div class="container">
+    <img src="ava.png" alt="Avatar" class="foto-chibi">
+    <h1>Finsmine</h1>
+    
+    <div class="social-links">
+        <a href="https://www.youtube.com/@Finsmys" target="_blank">YouTube</a>
+        <a href="https://www.tiktok.com/@notyoursmineagain" target="_blank">TikTok</a>
+        <a href="https://discord.com/invite/mHC6Wx73sb" target="_blank">Discord</a>
+        <a href="https://saweria.co/finsmine" target="_blank">Saweria</a>
+        <a href="mailto:inquiry@finsmine.com">Email Me</a>
+    </div>
+
+    <div class="joki-section">
+        <h3 style="color: #c9d1d9; text-align: center; margin-bottom: 15px;">🎮 Jasa Joki / Services</h3>
+
+        <div class="joki-item">
+            <div class="joki-header" onclick="toggleJoki('gameA')">
+                Heartopia <span>▼</span>
+            </div>
+            <div id="gameA" class="joki-content">
+                <ul class="price-list">
+                    <li><span>10k Gold Farming</span> <span>Rp 15.000</span></li>
+                    <li><span>50k Gold Farming</span> <span>Rp 70.000</span></li>
+                    <li><span>Custom Song</span> <span>Ask via Discord</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="joki-item">
+            <div class="joki-header" onclick="toggleJoki('gameB')">
+                Roblox <span>▼</span>
+            </div>
+            <div id="gameB" class="joki-content">
+                <ul class="price-list">
+                    <li><span>Map Design (Small)</span> <span>Rp xxx+</span></li>
+                    <li><span>Low-Poly Assets</span> <span>Rp xxx+</span></li>
+                </ul>
+            </div>
         </div>
     </div>
+</div>
+
+<script>
+    // Fungsi buat buka tutup kotak joki
+    function toggleJoki(id) {
+        var x = document.getElementById(id);
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+</script>
+
 </body>
 </html>
