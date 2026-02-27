@@ -19,7 +19,7 @@
             justify-content: center;
             min-height: 100vh;
             background-color: #0d1117;
-            background-image: url('backgroundgh.jpg'); /* Background tetap sama */
+            background-image: url('backgroundgh.jpg'); 
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -42,18 +42,33 @@
         h2 {
             color: #58a6ff;
             margin-top: 0;
-            margin-bottom: 20px;
+            margin-bottom: 5px;
             font-size: 2em;
+        }
+        
+        p.subtitle {
+            color: #c9d1d9;
+            font-size: 0.9em;
+            margin-bottom: 25px;
+        }
+
+        h3.category-title {
+            color: #c9d1d9;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            margin-top: 20px;
+            text-align: left;
+            border-bottom: 1px solid rgba(88, 166, 255, 0.3);
+            padding-bottom: 5px;
         }
 
         .price-list {
             list-style: none;
             padding: 0;
-            margin: 0 0 25px 0;
+            margin: 0 0 20px 0;
             text-align: left;
         }
 
-        /* Desain Kotak Harga Biar Kece */
         .price-item {
             background: rgba(88, 166, 255, 0.1);
             border: 1px solid rgba(88, 166, 255, 0.3);
@@ -78,7 +93,6 @@
             color: #58a6ff;
         }
 
-        /* Desain Kotak Kecil Untuk Harga */
         .price-item span:last-child {
             background: rgba(88, 166, 255, 0.2);
             padding: 5px 10px;
@@ -88,9 +102,9 @@
             font-weight: bold;
         }
 
-        /* Tombol Kembali */
         .back-btn {
             display: inline-block;
+            margin-top: 10px;
             padding: 10px 20px;
             background-color: transparent;
             color: #58a6ff;
@@ -103,10 +117,9 @@
 
         .back-btn:hover {
             background-color: rgba(88, 166, 255, 0.1);
-            transform: translateX(-5px); /* Efek geser kiri pas di-hover */
+            transform: translateX(-5px); 
         }
 
-        /* Responsif HP */
         @media (max-width: 600px) {
             h2 { font-size: 1.8em; }
             .price-item { 
@@ -121,20 +134,21 @@
 <body>
     <div class="container">
         <h2>Heartopia Store</h2>
+        <p class="subtitle">✔️ Proses sesuai antrian | ✔️ Aman & terpercaya</p>
         
+        <h3 class="category-title">💰 Gold Price List</h3>
         <ul class="price-list">
-            <li class="price-item">
-                <span>10k Gold Farming</span>
-                <span>Rp 15.000</span>
-            </li>
-            <li class="price-item">
-                <span>50k Gold Farming</span>
-                <span>Rp 70.000</span>
-            </li>
-            <li class="price-item">
-                <span>Custom Song Recording</span>
-                <span>Ask via Discord</span>
-            </li>
+            <li class="price-item"><span>100K Gold</span><span>Rp 25.000</span></li>
+            <li class="price-item"><span>500K Gold</span><span>Rp 125.000</span></li>
+            <li class="price-item"><span>1000K Gold</span><span>Rp 225.000</span></li>
+            <li class="price-item"><span>2000K Gold</span><span>Rp 400.000</span></li>
+        </ul>
+
+        <h3 class="category-title">🛠 Services Available</h3>
+        <ul class="price-list">
+            <li class="price-item"><span>Joki Daily & Weekly</span><span>Ask via Discord</span></li>
+            <li class="price-item"><span>Top Up Heartopia</span><span>Ask via Discord</span></li>
+            <li class="price-item"><span>Custom Song Recording</span><span>Ask via Discord</span></li>
         </ul>
 
         <a href="services.html" class="back-btn">← Kembali ke Kategori</a>
