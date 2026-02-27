@@ -102,9 +102,32 @@
             font-weight: bold;
         }
 
+        /* --- GAYA TOMBOL ORDER BARU --- */
+        .order-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #58a6ff;
+            color: #0d1117;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            transition: 0.3s;
+            box-sizing: border-box;
+        }
+
+        .order-btn:hover {
+            background-color: #82bfff;
+            transform: scale(1.03);
+            box-shadow: 0 4px 15px rgba(88, 166, 255, 0.4);
+        }
+
+        /* Gaya Tombol Kembali */
         .back-btn {
             display: inline-block;
-            margin-top: 10px;
             padding: 10px 20px;
             background-color: transparent;
             color: #58a6ff;
@@ -112,6 +135,7 @@
             border: 1px solid #58a6ff;
             border-radius: 6px;
             font-weight: bold;
+            font-size: 0.9em;
             transition: 0.3s;
         }
 
@@ -150,6 +174,8 @@
             <li class="price-item"><span>Top Up Heartopia</span><span>Ask via Discord</span></li>
             <li class="price-item"><span>Custom Song Recording</span><span>Ask via Discord</span></li>
         </ul>
+
+        <a href="https://discord.com/invite/mHC6Wx73sb" target="_blank" class="order-btn">🛒 Order via Discord</a>
 
         <a href="services.html" class="back-btn">← Kembali ke Kategori</a>
     </div>
