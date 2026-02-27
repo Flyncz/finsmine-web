@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finsmine - Official Website</title>
     <style>
-        /* Efek Muncul Halus */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -27,7 +25,6 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
-
         .container {
             max-width: 600px;
             width: 100%;
@@ -38,7 +35,6 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
             animation: fadeIn 1s ease-out;
         }
-
         .foto-chibi {
             width: 130px;
             height: 130px;
@@ -47,11 +43,8 @@
             border: 4px solid #58a6ff;
             margin-bottom: 15px;
         }
-
         h1 { color: #58a6ff; font-size: 2.5em; margin: 0 0 10px 0; }
         p { color: #c9d1d9; font-size: 1.1em; margin-bottom: 25px; }
-        
-        /* Gaya Tombol Sosmed */
         .social-links {
             display: flex;
             flex-wrap: wrap;
@@ -59,7 +52,6 @@
             gap: 10px;
             margin-bottom: 30px;
         }
-
         .social-links a {
             padding: 10px 18px;
             background-color: #58a6ff; 
@@ -70,16 +62,12 @@
             font-size: 0.9em;
             transition: 0.3s;
         }
-
         .social-links a:hover { background-color: #82bfff; transform: translateY(-2px); }
-
-        /* Gaya Bagian Joki */
         .joki-section {
             border-top: 1px solid #30363d;
             padding-top: 20px;
             text-align: center;
         }
-
         .joki-card {
             background: rgba(88, 166, 255, 0.1);
             border: 1px solid rgba(88, 166, 255, 0.4);
@@ -96,16 +84,12 @@
             width: 100%;
             box-sizing: border-box;
         }
-
         .joki-card:hover {
             background: rgba(88, 166, 255, 0.2);
             border-color: #58a6ff;
             transform: scale(1.02);
         }
-
         .joki-card span { font-size: 0.8em; color: #c9d1d9; font-weight: normal; }
-
-        /* Responsif HP */
         @media (max-width: 600px) {
             .container { padding: 25px 15px; }
             h1 { font-size: 2em; }
@@ -113,12 +97,10 @@
     </style>
 </head>
 <body>
-
 <div class="container">
     <img src="ava.png" alt="Avatar" class="foto-chibi">
     <h1>Finsmine</h1>
     <p>Streamer, Creator & Developer</p>
-    
     <div class="social-links">
         <a href="https://www.youtube.com/@Finsmys" target="_blank">YouTube</a>
         <a href="https://www.tiktok.com/@notyoursmineagain" target="_blank">TikTok</a>
@@ -127,15 +109,13 @@
         <a href="https://sociabuzz.com/finsmine/tribe" target="_blank">Sociabuzz</a>
         <a href="mailto:inquiry@finsmine.com">Email Me</a>
     </div>
-
     <div class="joki-section">
         <h3 style="color: #c9d1d9; margin-bottom: 15px;">🎮 Store & Services</h3>
-        <a href="services.html" class="joki-card">
+        <a href="services" class="joki-card">
             JOKI
             <span>Klik untuk melihat daftar harga & kategori</span>
         </a>
     </div>
 </div>
-
 </body>
 </html>
