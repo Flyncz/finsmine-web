@@ -7,25 +7,49 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0d1117;
-            color: #c9d1d9;
-            text-align: center;
-            padding: 50px 20px;
             margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+            
+            /* Pengaturan gambar background pakai backgroundgh.jpg */
+            background-color: #0d1117;
+            background-image: url('backgroundgh.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
         .container {
             max-width: 600px;
-            margin: 0 auto;
+            text-align: center;
+            /* Kotak gelap transparan biar teks tetap terbaca di atas background */
+            background-color: rgba(13, 17, 23, 0.85); 
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+        .foto-chibi {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #58a6ff;
+            margin-bottom: 15px;
         }
         h1 {
             color: #58a6ff;
             font-size: 3em;
+            margin-top: 0;
             margin-bottom: 10px;
         }
         p {
             font-size: 1.2em;
             line-height: 1.6;
-            color: #8b949e;
+            color: #c9d1d9;
             margin-bottom: 30px;
         }
         .social-links {
@@ -51,8 +75,10 @@
 </head>
 <body>
     <div class="container">
+        <img src="ava.png" alt="Finsmine Avatar" class="foto-chibi">
+        
         <h1>Finsmine</h1>
-        <p>Welcome to Finsmine. I'm a streamer and creator dedicated to sharing what I love. My goal is simple, to share content that brings a little more joy and entertainment to your day.</p>
+        <p>Welcome to Finsmine. I'm a streamer and creator dedicated to sharing what I love. My goal is simple: to share content that brings a little more joy and entertainment to your day.</p>
         <div class="social-links">
             <a href="https://www.youtube.com/@Finsmys" target="_blank">YouTube</a>
             <a href="https://www.tiktok.com/@notyoursmineagain" target="_blank">TikTok</a>
