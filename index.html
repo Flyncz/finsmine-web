@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finsmine - Services</title>
+    <title>Finsmine - Official Website</title>
     <style>
         /* Efek Muncul Halus */
         @keyframes fadeIn {
@@ -49,6 +49,7 @@
         }
 
         h1 { color: #58a6ff; font-size: 2.5em; margin: 0 0 10px 0; }
+        p { color: #c9d1d9; font-size: 1.1em; margin-bottom: 25px; }
         
         /* Gaya Tombol Sosmed */
         .social-links {
@@ -97,7 +98,7 @@
         }
 
         .joki-content {
-            display: none; /* Sembunyi awalnya */
+            display: none; 
             padding: 0 15px 15px 15px;
             color: #c9d1d9;
             border-top: 1px solid rgba(88, 166, 255, 0.1);
@@ -111,7 +112,6 @@
 
         .price-list li {
             padding: 5px 0;
-            border-bottom: 1px hideen;
             display: flex;
             justify-content: space-between;
         }
@@ -128,12 +128,14 @@
 <div class="container">
     <img src="ava.png" alt="Avatar" class="foto-chibi">
     <h1>Finsmine</h1>
+    <p>Official Links & Services</p>
     
     <div class="social-links">
         <a href="https://www.youtube.com/@Finsmys" target="_blank">YouTube</a>
         <a href="https://www.tiktok.com/@notyoursmineagain" target="_blank">TikTok</a>
         <a href="https://discord.com/invite/mHC6Wx73sb" target="_blank">Discord</a>
         <a href="https://saweria.co/finsmine" target="_blank">Saweria</a>
+        <a href="https://sociabuzz.com/finsmine/tribe" target="_blank">Sociabuzz</a>
         <a href="mailto:inquiry@finsmine.com">Email Me</a>
     </div>
 
@@ -146,9 +148,8 @@
             </div>
             <div id="gameA" class="joki-content">
                 <ul class="price-list">
-                    <li><span>10k Gold Farming</span> <span>Rp 15.000</span></li>
-                    <li><span>50k Gold Farming</span> <span>Rp 70.000</span></li>
-                    <li><span>Custom Song</span> <span>Ask via Discord</span></li>
+                    <li><span>Gold Farming</span> <span>Cek via Discord</span></li>
+                    <li><span>Custom Song Recording</span> <span>Cek via Discord</span></li>
                 </ul>
             </div>
         </div>
@@ -159,8 +160,8 @@
             </div>
             <div id="gameB" class="joki-content">
                 <ul class="price-list">
-                    <li><span>Map Design (Small)</span> <span>Rp xxx+</span></li>
-                    <li><span>Low-Poly Assets</span> <span>Rp xxx+</span></li>
+                    <li><span>Map Development</span> <span>Negotiable</span></li>
+                    <li><span>Blender Assets</span> <span>Rp 20.000+</span></li>
                 </ul>
             </div>
         </div>
@@ -168,7 +169,6 @@
 </div>
 
 <script>
-    // Fungsi buat buka tutup kotak joki
     function toggleJoki(id) {
         var x = document.getElementById(id);
         if (x.style.display === "block") {
