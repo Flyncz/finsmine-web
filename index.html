@@ -73,48 +73,37 @@
 
         .social-links a:hover { background-color: #82bfff; transform: translateY(-2px); }
 
-        /* Gaya List Joki (Accordion) */
+        /* Gaya Bagian Joki */
         .joki-section {
             border-top: 1px solid #30363d;
             padding-top: 20px;
-            text-align: left;
+            text-align: center;
         }
 
-        .joki-item {
-            background: rgba(88, 166, 255, 0.05);
-            border: 1px solid rgba(88, 166, 255, 0.3);
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
-
-        .joki-header {
-            padding: 15px;
-            cursor: pointer;
+        .joki-card {
+            background: rgba(88, 166, 255, 0.1);
+            border: 1px solid rgba(88, 166, 255, 0.4);
+            padding: 20px;
+            border-radius: 12px;
             color: #58a6ff;
+            text-decoration: none;
             font-weight: bold;
+            transition: 0.3s;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
+            gap: 5px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
-        .joki-content {
-            display: none; 
-            padding: 0 15px 15px 15px;
-            color: #c9d1d9;
-            border-top: 1px solid rgba(88, 166, 255, 0.1);
+        .joki-card:hover {
+            background: rgba(88, 166, 255, 0.2);
+            border-color: #58a6ff;
+            transform: scale(1.02);
         }
 
-        .price-list {
-            list-style: none;
-            padding: 0;
-            margin: 10px 0 0 0;
-        }
-
-        .price-list li {
-            padding: 5px 0;
-            display: flex;
-            justify-content: space-between;
-        }
+        .joki-card span { font-size: 0.8em; color: #c9d1d9; font-weight: normal; }
 
         /* Responsif HP */
         @media (max-width: 600px) {
@@ -128,7 +117,7 @@
 <div class="container">
     <img src="ava.png" alt="Avatar" class="foto-chibi">
     <h1>Finsmine</h1>
-    <p>Official Links & Services</p>
+    <p>Streamer, Creator & Developer</p>
     
     <div class="social-links">
         <a href="https://www.youtube.com/@Finsmys" target="_blank">YouTube</a>
@@ -140,44 +129,13 @@
     </div>
 
     <div class="joki-section">
-        <h3 style="color: #c9d1d9; text-align: center; margin-bottom: 15px;">🎮 Jasa Joki / Services</h3>
-
-        <div class="joki-item">
-            <div class="joki-header" onclick="toggleJoki('gameA')">
-                Heartopia <span>▼</span>
-            </div>
-            <div id="gameA" class="joki-content">
-                <ul class="price-list">
-                    <li><span>Gold Farming</span> <span>Cek via Discord</span></li>
-                    <li><span>Custom Song Recording</span> <span>Cek via Discord</span></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="joki-item">
-            <div class="joki-header" onclick="toggleJoki('gameB')">
-                Roblox <span>▼</span>
-            </div>
-            <div id="gameB" class="joki-content">
-                <ul class="price-list">
-                    <li><span>Map Development</span> <span>Negotiable</span></li>
-                    <li><span>Blender Assets</span> <span>Rp 20.000+</span></li>
-                </ul>
-            </div>
-        </div>
+        <h3 style="color: #c9d1d9; margin-bottom: 15px;">🎮 Store & Services</h3>
+        <a href="services.html" class="joki-card">
+            JOKI
+            <span>Klik untuk melihat daftar harga & kategori</span>
+        </a>
     </div>
 </div>
-
-<script>
-    function toggleJoki(id) {
-        var x = document.getElementById(id);
-        if (x.style.display === "block") {
-            x.style.display = "none";
-        } else {
-            x.style.display = "block";
-        }
-    }
-</script>
 
 </body>
 </html>
