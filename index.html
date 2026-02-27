@@ -24,11 +24,13 @@
         }
         .container {
             max-width: 600px;
+            width: 100%; /* Biar kotaknya menyesuaikan lebar layar */
             text-align: center;
             background-color: rgba(13, 17, 23, 0.85); 
             padding: 40px;
             border-radius: 20px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
         }
         .foto-chibi {
             width: 150px;
@@ -56,20 +58,40 @@
             justify-content: center;
             gap: 15px;
         }
-        
-        /* --- SEKARANG SEMUA TOMBOL JADI BIRU --- */
         .social-links a {
             display: inline-block;
             padding: 12px 24px;
-            background-color: #58a6ff; /* Biru Finsmine */
-            color: #0d1117; /* Teks gelap biar kontras dan jelas */
+            background-color: #58a6ff; 
+            color: #0d1117; 
             text-decoration: none;
             border-radius: 6px;
             font-weight: bold;
             transition: background-color 0.2s;
         }
         .social-links a:hover {
-            background-color: #82bfff; /* Biru yang lebih terang pas di-hover */
+            background-color: #82bfff; 
+        }
+
+        /* --- TRIK BIAR CAKEP DI HP (RESPONSIVE) --- */
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px; /* Kurangi jarak area dalam kotak */
+            }
+            .foto-chibi {
+                width: 120px; /* Foto agak dikecilin dikit */
+                height: 120px;
+            }
+            h1 {
+                font-size: 2.2em; /* Judul dikecilin */
+            }
+            p {
+                font-size: 1em; /* Teks dikecilin biar nggak sumpek */
+                margin-bottom: 20px;
+            }
+            .social-links a {
+                padding: 10px 18px; /* Tombol dirapihin */
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
@@ -78,7 +100,7 @@
         <img src="ava.png" alt="Finsmine Avatar" class="foto-chibi">
         
         <h1>Finsmine</h1>
-        <p>Welcome to Finsmine. I'm a streamer and creator dedicated to sharing what I love. My goal is simple, to share content that brings a little more joy and entertainment to your day.</p>
+        <p>Welcome to Finsmine. I'm a streamer and creator dedicated to sharing what I love. My goal is simple: to share content that brings a little more joy and entertainment to your day.</p>
         <div class="social-links">
             <a href="https://www.youtube.com/@Finsmys" target="_blank">YouTube</a>
             <a href="https://www.tiktok.com/@notyoursmineagain" target="_blank">TikTok</a>
