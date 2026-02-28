@@ -10,110 +10,150 @@
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #0d1117; background-image: url('backgroundgh.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; padding: 20px; box-sizing: border-box; }
         .container { max-width: 650px; width: 100%; background-color: rgba(13, 17, 23, 0.85); padding: 30px; border-radius: 20px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5); animation: fadeIn 0.8s ease-out; text-align: center; }
         h2 { color: #58a6ff; margin-top: 0; margin-bottom: 5px; font-size: 2em; }
-        p.subtitle { color: #c9d1d9; font-size: 0.9em; margin-bottom: 25px; }
+        p.subtitle { color: #c9d1d9; font-size: 0.9em; margin-bottom: 20px; }
         
-        h3.category-title { color: #c9d1d9; font-size: 1.2em; margin-bottom: 15px; margin-top: 30px; text-align: left; border-bottom: 1px solid rgba(88, 166, 255, 0.3); padding-bottom: 5px; }
+        /* DESAIN MENU TABS KE SAMPING */
+        .tabs-container { display: flex; overflow-x: auto; gap: 10px; padding-bottom: 10px; margin-bottom: 20px; scrollbar-width: thin; scrollbar-color: #58a6ff rgba(13,17,23,0.5); }
+        .tabs-container::-webkit-scrollbar { height: 6px; }
+        .tabs-container::-webkit-scrollbar-thumb { background: #58a6ff; border-radius: 10px; }
         
-        /* DESAIN GRID (2 Kolom) BIAR GAK KEPANJANGAN */
-        .price-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 0; margin: 0 0 20px 0; list-style: none; text-align: left; }
-        
+        .tab-btn { flex: 0 0 auto; background: rgba(88, 166, 255, 0.1); border: 1px solid #58a6ff; color: #58a6ff; padding: 10px 15px; border-radius: 10px; font-weight: bold; cursor: pointer; transition: 0.3s; font-size: 0.9em; }
+        .tab-btn:hover { background: rgba(88, 166, 255, 0.2); }
+        .tab-btn.active { background: #58a6ff; color: #0d1117; }
+
+        /* KONTEN TAB YANG BISA DISEMBUNYIKAN */
+        .tab-content { display: none; animation: fadeIn 0.5s; }
+        .tab-content.active { display: block; }
+
+        /* DESAIN GRID PRODUK */
+        .price-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 0; margin: 0; list-style: none; text-align: left; }
         .price-item { background: rgba(88, 166, 255, 0.1); border: 1px solid rgba(88, 166, 255, 0.3); border-radius: 8px; padding: 12px; display: flex; flex-direction: column; justify-content: space-between; gap: 8px; transition: 0.3s; }
         .price-item:hover { background: rgba(88, 166, 255, 0.2); border-color: #58a6ff; transform: translateY(-2px); }
         
         .item-info { display: flex; flex-direction: column; }
         .item-name { font-weight: bold; color: #58a6ff; font-size: 0.95em; }
         .item-dur { font-size: 0.75em; color: #8b949e; margin-top: 2px; }
-        
         .item-price { background: rgba(88, 166, 255, 0.2); padding: 4px 8px; border-radius: 5px; font-size: 0.9em; color: #ffffff; font-weight: bold; align-self: flex-start; }
         
-        .order-btn { display: block; width: 100%; padding: 15px; background-color: #58a6ff; color: #0d1117; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 1.1em; margin-top: 30px; margin-bottom: 15px; transition: 0.3s; box-sizing: border-box; }
+        /* TOMBOL BAWAH */
+        .order-btn { display: block; width: 100%; padding: 15px; background-color: #58a6ff; color: #0d1117; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 1.1em; margin-top: 25px; margin-bottom: 15px; transition: 0.3s; box-sizing: border-box; }
         .order-btn:hover { background: #82bfff; transform: scale(1.02); }
         .back-btn { display: inline-block; padding: 10px 20px; background: transparent; color: #58a6ff; text-decoration: none; border: 1px solid #58a6ff; border-radius: 6px; font-weight: bold; font-size: 0.9em; transition: 0.3s; }
         .back-btn:hover { background: rgba(88, 166, 255, 0.1); }
         
-        /* Kalau di HP layar kecil, otomatis jadi 1 baris ke bawah */
         @media (max-width: 600px) { .price-list { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>Premium Apps</h2>
-        <p class="subtitle">📺 Akun legal, aman, & bergaransi penuh</p>
+        <p class="subtitle">Geser & klik menu di bawah untuk memilih kategori</p>
         
-        <h3 class="category-title">🎬 Streaming Film & Video</h3>
-        <ul class="price-list">
-            <li class="price-item"><div class="item-info"><span class="item-name">Netflix Premium</span><span class="item-dur">1 Day</span></div><span class="item-price">Rp 4.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Netflix Premium</span><span class="item-dur">3 Day</span></div><span class="item-price">Rp 7.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Netflix Premium</span><span class="item-dur">7 Day</span></div><span class="item-price">Rp 13.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Netflix Premium</span><span class="item-dur">1 User 1 Profil</span></div><span class="item-price">Rp 37.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Netflix Premium</span><span class="item-dur">Private 1 Bulan</span></div><span class="item-price">Rp 160.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Disney+ Hotstar</span><span class="item-dur">1 Bulan Sharing 6 User</span></div><span class="item-price">Rp 25.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Prime Video</span><span class="item-dur">1 Bulan Private</span></div><span class="item-price">Rp 15.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Viu Premium</span><span class="item-dur">1 Tahun</span></div><span class="item-price">Rp 5.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Viu Premium</span><span class="item-dur">Lifetime</span></div><span class="item-price">Rp 8.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">WeTV</span><span class="item-dur">Sharing 1 Bulan</span></div><span class="item-price">Rp 8.500</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">WeTV</span><span class="item-dur">Private</span></div><span class="item-price">Rp 25.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">iQIYI</span><span class="item-dur">1 Bulan Premium</span></div><span class="item-price">Rp 6.500</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">iQIYI</span><span class="item-dur">3 Bulan Premium</span></div><span class="item-price">Rp 12.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">iQIYI</span><span class="item-dur">12 Bulan Premium</span></div><span class="item-price">Rp 15.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">HBO Max Premium</span><span class="item-dur">Sharing Ultimate</span></div><span class="item-price">Rp 16.100</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Bstation</span><span class="item-dur">1 Bulan Sharing</span></div><span class="item-price">Rp 7.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Vidplat</span><span class="item-dur">Mobile Only 1 Pcs</span></div><span class="item-price">Rp 26.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Vidplat</span><span class="item-dur">All Device 1 Pcs</span></div><span class="item-price">Rp 36.500</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">YouTube Premium</span><span class="item-dur">Individual 1 Bulan</span></div><span class="item-price">Rp 12.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">YouTube Premium</span><span class="item-dur">Famhead</span></div><span class="item-price">Rp 12.500</span></li>
-        </ul>
+        <div class="tabs-container">
+            <button class="tab-btn active" onclick="openMenu(event, 'film')">🎬 Film & Video</button>
+            <button class="tab-btn" onclick="openMenu(event, 'design')">🎨 Design & Edit</button>
+            <button class="tab-btn" onclick="openMenu(event, 'ai')">🤖 AI & Tools</button>
+            <button class="tab-btn" onclick="openMenu(event, 'musik')">🎵 Musik</button>
+            <button class="tab-btn" onclick="openMenu(event, 'vpn')">🛡️ VPN</button>
+            <button class="tab-btn" onclick="openMenu(event, 'lisensi')">💻 Lisensi PC</button>
+        </div>
 
-        <h3 class="category-title">🎨 Design & Editing</h3>
-        <ul class="price-list">
-            <li class="price-item"><div class="item-info"><span class="item-name">Canva Pro</span><span class="item-dur">1 Bulan - Invite</span></div><span class="item-price">Rp 2.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Canva Pro</span><span class="item-dur">Head 1 Bulan</span></div><span class="item-price">Rp 6.500</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Canva Pro Edu</span><span class="item-dur">6 Bln (Garansi 3 Bln)</span></div><span class="item-price">Rp 6.500</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Canva Pro Edu</span><span class="item-dur">1 Thn (Garansi 6 Bln)</span></div><span class="item-price">Rp 10.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Canva Pro</span><span class="item-dur">Lifetime (Garansi 6 Bln)</span></div><span class="item-price">Rp 17.500</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Canva Pro</span><span class="item-dur">Lifetime (Garansi 1 Thn)</span></div><span class="item-price">Rp 21.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Canva Pro</span><span class="item-dur">Head Lifetime</span></div><span class="item-price">Rp 27.500</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Capcut Private</span><span class="item-dur">35 Days</span></div><span class="item-price">Rp 9.500</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Capcut Private</span><span class="item-dur">5 Bulan</span></div><span class="item-price">Rp 35.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Alight Motion</span><span class="item-dur">1 Tahun 1 Pcs</span></div><span class="item-price">Rp 10.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Picsart</span><span class="item-dur">Famhead 1 Bulan</span></div><span class="item-price">Rp 9.500</span></li>
-        </ul>
+        <div id="film" class="tab-content active">
+            <ul class="price-list">
+                <li class="price-item"><div class="item-info"><span class="item-name">Netflix Premium</span><span class="item-dur">1 Day</span></div><span class="item-price">Rp 4.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Netflix Premium</span><span class="item-dur">3 Day</span></div><span class="item-price">Rp 7.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Netflix Premium</span><span class="item-dur">7 Day</span></div><span class="item-price">Rp 13.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Netflix Premium</span><span class="item-dur">1 User 1 Profil</span></div><span class="item-price">Rp 37.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Netflix Premium</span><span class="item-dur">Private 1 Bulan</span></div><span class="item-price">Rp 160.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Disney+ Hotstar</span><span class="item-dur">1 Bulan Sharing 6 User</span></div><span class="item-price">Rp 25.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Prime Video</span><span class="item-dur">1 Bulan Private</span></div><span class="item-price">Rp 15.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Viu Premium</span><span class="item-dur">1 Tahun</span></div><span class="item-price">Rp 5.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Viu Premium</span><span class="item-dur">Lifetime</span></div><span class="item-price">Rp 8.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">WeTV</span><span class="item-dur">Sharing 1 Bulan</span></div><span class="item-price">Rp 8.500</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">WeTV</span><span class="item-dur">Private</span></div><span class="item-price">Rp 25.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">iQIYI</span><span class="item-dur">1 Bulan Premium</span></div><span class="item-price">Rp 6.500</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">iQIYI</span><span class="item-dur">3 Bulan Premium</span></div><span class="item-price">Rp 12.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">iQIYI</span><span class="item-dur">12 Bulan Premium</span></div><span class="item-price">Rp 15.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">HBO Max Premium</span><span class="item-dur">Sharing Ultimate</span></div><span class="item-price">Rp 16.100</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Bstation</span><span class="item-dur">1 Bulan Sharing</span></div><span class="item-price">Rp 7.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Vidplat</span><span class="item-dur">Mobile Only 1 Pcs</span></div><span class="item-price">Rp 26.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Vidplat</span><span class="item-dur">All Device 1 Pcs</span></div><span class="item-price">Rp 36.500</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">YouTube Premium</span><span class="item-dur">Individual 1 Bulan</span></div><span class="item-price">Rp 12.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">YouTube Premium</span><span class="item-dur">Famhead</span></div><span class="item-price">Rp 12.500</span></li>
+            </ul>
+        </div>
 
-        <h3 class="category-title">🤖 AI & Produktivitas</h3>
-        <ul class="price-list">
-            <li class="price-item"><div class="item-info"><span class="item-name">ChatGPT Plus</span><span class="item-dur">Jaspay Team 1 Bulan</span></div><span class="item-price">Rp 10.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">ChatGPT Plus</span><span class="item-dur">Jaspay Plus 1 Bulan</span></div><span class="item-price">Rp 10.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">ChatGPT Plus</span><span class="item-dur">Private 1 Bulan</span></div><span class="item-price">Rp 15.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Zoom Pro</span><span class="item-dur">14 Hari</span></div><span class="item-price">Rp 4.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">GetContact</span><span class="item-dur">1 Bulan</span></div><span class="item-price">Rp 7.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Scribd</span><span class="item-dur">1 Bulan</span></div><span class="item-price">Rp 10.000</span></li>
-        </ul>
+        <div id="design" class="tab-content">
+            <ul class="price-list">
+                <li class="price-item"><div class="item-info"><span class="item-name">Canva Pro</span><span class="item-dur">1 Bulan - Invite</span></div><span class="item-price">Rp 2.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Canva Pro</span><span class="item-dur">Head 1 Bulan</span></div><span class="item-price">Rp 6.500</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Canva Pro Edu</span><span class="item-dur">6 Bln (Garansi 3 Bln)</span></div><span class="item-price">Rp 6.500</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Canva Pro Edu</span><span class="item-dur">1 Thn (Garansi 6 Bln)</span></div><span class="item-price">Rp 10.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Canva Pro</span><span class="item-dur">Lifetime (Garansi 6 Bln)</span></div><span class="item-price">Rp 17.500</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Canva Pro</span><span class="item-dur">Lifetime (Garansi 1 Thn)</span></div><span class="item-price">Rp 21.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Canva Pro</span><span class="item-dur">Head Lifetime</span></div><span class="item-price">Rp 27.500</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Capcut Private</span><span class="item-dur">35 Days</span></div><span class="item-price">Rp 9.500</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Capcut Private</span><span class="item-dur">5 Bulan</span></div><span class="item-price">Rp 35.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Alight Motion</span><span class="item-dur">1 Tahun 1 Pcs</span></div><span class="item-price">Rp 10.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Picsart</span><span class="item-dur">Famhead 1 Bulan</span></div><span class="item-price">Rp 9.500</span></li>
+            </ul>
+        </div>
 
-        <h3 class="category-title">🎵 Musik & Audio</h3>
-        <ul class="price-list">
-            <li class="price-item"><div class="item-info"><span class="item-name">Spotify Premium</span><span class="item-dur">Individual 1 Bulan</span></div><span class="item-price">Rp 15.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Apple Music</span><span class="item-dur">Head 1 Bulan</span></div><span class="item-price">Rp 8.000</span></li>
-        </ul>
+        <div id="ai" class="tab-content">
+            <ul class="price-list">
+                <li class="price-item"><div class="item-info"><span class="item-name">ChatGPT Plus</span><span class="item-dur">Jaspay Team 1 Bulan</span></div><span class="item-price">Rp 10.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">ChatGPT Plus</span><span class="item-dur">Jaspay Plus 1 Bulan</span></div><span class="item-price">Rp 10.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">ChatGPT Plus</span><span class="item-dur">Private 1 Bulan</span></div><span class="item-price">Rp 15.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Zoom Pro</span><span class="item-dur">14 Hari</span></div><span class="item-price">Rp 4.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">GetContact</span><span class="item-dur">1 Bulan</span></div><span class="item-price">Rp 7.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Scribd</span><span class="item-dur">1 Bulan</span></div><span class="item-price">Rp 10.000</span></li>
+            </ul>
+        </div>
 
-        <h3 class="category-title">🛡️ VPN Services</h3>
-        <ul class="price-list">
-            <li class="price-item"><div class="item-info"><span class="item-name">Express VPN</span><span class="item-dur">1 Bulan</span></div><span class="item-price">Rp 10.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">HMA VPN</span><span class="item-dur">1 Bulan</span></div><span class="item-price">Rp 10.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Surfshark VPN</span><span class="item-dur">3 Bulan</span></div><span class="item-price">Rp 25.000</span></li>
-        </ul>
+        <div id="musik" class="tab-content">
+            <ul class="price-list">
+                <li class="price-item"><div class="item-info"><span class="item-name">Spotify Premium</span><span class="item-dur">Individual 1 Bulan</span></div><span class="item-price">Rp 15.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Apple Music</span><span class="item-dur">Head 1 Bulan</span></div><span class="item-price">Rp 8.000</span></li>
+            </ul>
+        </div>
 
-        <h3 class="category-title">💻 Lisensi Windows & Office</h3>
-        <ul class="price-list">
-            <li class="price-item"><div class="item-info"><span class="item-name">Office 365</span><span class="item-dur">Random</span></div><span class="item-price">Rp 20.000</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Office 2016</span><span class="item-dur">Professional Plus</span></div><span class="item-price">Rp 27.500</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Office 2019</span><span class="item-dur">Professional Plus</span></div><span class="item-price">Rp 27.500</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Office 2021</span><span class="item-dur">Professional Plus</span></div><span class="item-price">Rp 27.500</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Windows 10</span><span class="item-dur">Pro</span></div><span class="item-price">Rp 27.500</span></li>
-            <li class="price-item"><div class="item-info"><span class="item-name">Windows 11</span><span class="item-dur">Pro</span></div><span class="item-price">Rp 27.500</span></li>
-        </ul>
+        <div id="vpn" class="tab-content">
+            <ul class="price-list">
+                <li class="price-item"><div class="item-info"><span class="item-name">Express VPN</span><span class="item-dur">1 Bulan</span></div><span class="item-price">Rp 10.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">HMA VPN</span><span class="item-dur">1 Bulan</span></div><span class="item-price">Rp 10.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Surfshark VPN</span><span class="item-dur">3 Bulan</span></div><span class="item-price">Rp 25.000</span></li>
+            </ul>
+        </div>
+
+        <div id="lisensi" class="tab-content">
+            <ul class="price-list">
+                <li class="price-item"><div class="item-info"><span class="item-name">Office 365</span><span class="item-dur">Random</span></div><span class="item-price">Rp 20.000</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Office 2016</span><span class="item-dur">Professional Plus</span></div><span class="item-price">Rp 27.500</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Office 2019</span><span class="item-dur">Professional Plus</span></div><span class="item-price">Rp 27.500</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Office 2021</span><span class="item-dur">Professional Plus</span></div><span class="item-price">Rp 27.500</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Windows 10</span><span class="item-dur">Pro</span></div><span class="item-price">Rp 27.500</span></li>
+                <li class="price-item"><div class="item-info"><span class="item-name">Windows 11</span><span class="item-dur">Pro</span></div><span class="item-price">Rp 27.500</span></li>
+            </ul>
+        </div>
 
         <a href="https://t.me/finstore_id_bot" target="_blank" class="order-btn">✈️ Order via Telegram</a>
         <a href="/" class="back-btn">← Kembali ke Halaman Utama</a>
     </div>
+
+    <script>
+        function openMenu(evt, categoryName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(categoryName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
 </body>
 </html>
